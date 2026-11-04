@@ -1,0 +1,10 @@
+{
+  "title": "我的学习笔记",
+  "subtitle": "以笔记记录实践，以主题连接知识，让每一次积累都能被找到。",
+  "topics": [
+    {"name": "电子设计", "keywords": ["Altium", "PCB", "PcbLib", "焊盘", "封装"]},
+    {"name": "三维建模", "keywords": ["3D", "STEP", "模型", "对齐"]},
+    {"name": "知识管理", "keywords": ["Markdown", "笔记", "知识库", "知识管理"]},
+    {"name": "开发与部署", "keywords": ["Python", "Docker", "GitHub", "部署", "脚本"]}
+  ]
+}

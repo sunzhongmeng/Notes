@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark"><title>{{TITLE}} · 学习档案</title>
+<link rel="stylesheet" href="{{PREFIX}}static/style.css">
+<script defer src="{{PREFIX}}static/app.js" data-root="{{PREFIX}}"></script>
+</head>
+<body>
+<script id="notes-data" type="application/json">{{DATA}}</script>
+<header><div class="header-start"><button id="menu-toggle" aria-label="隐藏菜单" aria-controls="sidebar" aria-expanded="true">☰</button><a class="brand" href="{{PREFIX}}index.html"><span class="brand-icon">N.</span>{{SITE}}</a></div><nav class="header-actions"><button id="quick-search" title="点击搜索，或在网页正文中按 /">搜索 <kbd>/</kbd></button><label class="ui-picker"><span>界面</span><select id="ui-style" aria-label="选择界面风格"><option value="forest">森林 · 卡片</option><option value="paper">纸笺 · 阅读</option><option value="ocean">海蓝 · 工作台</option><option value="minimal">极简 · 列表</option></select></label><button id="theme" aria-label="切换明暗主题">◐</button></nav></header>
+<dialog id="search-dialog" aria-labelledby="search-title"><div class="dialog-heading"><h2 id="search-title">搜索知识库</h2><button id="close-search" aria-label="关闭搜索">关闭 Esc</button></div><label class="search"><input id="global-search" type="search" placeholder="输入标题、正文或关键词" aria-label="搜索全部笔记"></label><p class="search-help">在网页正文中按 / 打开；输入框中正常输入。点击结果阅读，Esc 关闭。</p><p id="global-count" role="status"></p><div id="global-results"></div></dialog>
+<nav id="sidebar" aria-label="笔记导航"><div class="aside-title">我的知识空间</div><a href="{{PREFIX}}index.html" data-view="notes">▤ 全部笔记</a><a href="{{PREFIX}}index.html?view=knowledge" data-view="knowledge">◈ 知识库</a><a href="{{PREFIX}}index.html?review=1" data-view="review">↻ 待复习</a><div class="aside-title">知识主题</div><div id="sidebar-topics"></div><div class="aside-title">关键词索引</div><div id="sidebar-keywords" class="chips"></div><p class="sidebar-help">Markdown 记录 · 关键词连接<br>点击正文空白处，再按 / 搜索</p></nav>
+<div class="layout"><main id="content">{{BODY}}<footer>LEARN · PRACTICE · REMEMBER <span>用文字，留下思考的轨迹。</span></footer></main><aside id="outline"><div class="aside-title">本篇目录</div>{{TOC}}<div class="source">{{SOURCE}}</div><button id="review" hidden>加入待复习</button></aside></div>
+</body></html>

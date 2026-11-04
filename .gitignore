@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+build/
+exports/
+.DS_Store
+*.log
+
+
+.vs/

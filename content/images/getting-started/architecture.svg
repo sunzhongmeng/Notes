@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" role="img" aria-label="Markdown、图片、附件与代码统一构建，分别部署到本地、服务器和 GitHub，文章导出至博客园">
+<rect width="900" height="300" rx="18" fill="#eef2ed"/>
+<g font-family="Segoe UI,Microsoft YaHei,sans-serif" text-anchor="middle">
+<rect x="35" y="60" width="235" height="180" rx="12" fill="#fff" stroke="#cbd9ce"/><text x="152" y="100" font-size="20" fill="#24563e">content / 公共内容</text><text x="152" y="140" font-size="16" fill="#526a5a">Markdown · 图片</text><text x="152" y="175" font-size="16" fill="#526a5a">附件 · 配套代码</text><text x="152" y="210" font-size="13" fill="#728077">独立存储，整体迁移</text>
+<path d="M270 150H340M555 150H625M590 150V70H625M590 150V230H625" fill="none" stroke="#66957a" stroke-width="3"/>
+<rect x="340" y="100" width="215" height="100" rx="12" fill="#226147"/><text x="447" y="143" font-size="20" fill="white">website / 统一构建</text><text x="447" y="175" font-size="14" fill="#dcebdc">静态网页 · 全文搜索</text>
+<g fill="#fff" stroke="#cbd9ce"><rect x="625" y="38" width="240" height="64" rx="10"/><rect x="625" y="118" width="240" height="64" rx="10"/><rect x="625" y="198" width="240" height="64" rx="10"/></g>
+<g fill="#24563e" font-size="16"><text x="745" y="77">本地 / 服务器 / 树莓派</text><text x="745" y="157">GitHub Pages</text><text x="745" y="237">博客园（单篇导出）</text></g>
+</g></svg>

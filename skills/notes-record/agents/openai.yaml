@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notes 排查与实践记录"
+  short_description: "将分析排查整理为完整笔记，统一保存 Markdown、代码、图片与附件并验证本地预览"
+  default_prompt: "使用 $notes-record 将这次分析排查整理为完整的 Notes 文档，保存实际配套资源并构建检查，给出本地预览路径。"
