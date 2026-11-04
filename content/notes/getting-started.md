@@ -160,12 +160,40 @@ Set-Location -LiteralPath 'E:\codex_prj\Notes'
 
 推送成功后，GitHub Actions 会构建并部署站点。请等待 Actions 完成，再访问 `https://你的用户名.github.io/Notes/`（仓库名不同则替换 `Notes`）。脚本显示推送成功仅表示 Git 推送成功，部署是否成功以 Actions 页面为准。
 
+### 启用 GitHub Pages 并通过网址访问
+
+当前项目使用 GitHub Actions 将 Markdown 构建为静态网页；推送源码后由 GitHub 自动部署，无需上传本机的 `build/site/`。
+
+1. 打开 [Notes 仓库](https://github.com/sunzhongmeng/Notes)，进入 **Settings → Pages**。
+2. 在 **Build and deployment → Source** 中选择 **GitHub Actions**。项目已提供 `.github/workflows/pages.yml`，无需再选择其他站点模板。
+3. 双击本机的 `E:\codex_prj\Notes\一键推送.cmd`，查看变更、确认提交并推送。
+4. 打开仓库的 [Actions 页面](https://github.com/sunzhongmeng/Notes/actions)，查看与最新提交对应的 **Deploy learning notes**，等待构建和部署任务均显示绿色成功。若之前因 Pages 尚未启用而失败，完成设置后打开失败的运行记录，点击 **Re-run all jobs**。
+5. 回到 **Settings → Pages**，通过 **Visit site** 打开站点；也可以在浏览器地址栏直接输入下面的网址。
+
+| 入口 | 地址 | 用途 |
+| --- | --- | --- |
+| GitHub 仓库 | [sunzhongmeng/Notes](https://github.com/sunzhongmeng/Notes) | 查看和管理源文件 |
+| 笔记网站首页 | [在线笔记](https://sunzhongmeng.github.io/Notes/) | 阅读、搜索和浏览笔记 |
+| 本篇说明 | [在线笔记使用说明](https://sunzhongmeng.github.io/Notes/notes/getting-started.html) | 直接打开本说明 |
+
+上述网站地址在 Pages 成功部署后可用。地址中的仓库名为 `Notes`，访问时保留对应大小写和路径。后续每次推送 `main` 都会触发自动部署，不必重复设置 Pages。更改发布后可能需要几分钟才可看到，GitHub 官方说明最长可能需要约 10 分钟；先确认 Actions 完成，再刷新页面。
+
+设置步骤与发布等待时间可参考 [GitHub Pages 发布源配置](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) 和 [查看发布的网站](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)（访问日期：2026-11-04）。
+
+### 在 GitHub 个人主页添加入口
+
+打开自己的 [GitHub 个人主页](https://github.com/sunzhongmeng)，点击 **Edit profile**，在网站地址字段中填写 `https://sunzhongmeng.github.io/Notes/` 并保存。这样，别人可以从个人资料中的网站链接进入笔记；设置个人资料链接与启用 Pages 是两件独立的事，网站需要先部署成功。
+
+当前使用的是项目站点地址 `https://sunzhongmeng.github.io/Notes/`。如果以后希望用根地址 `https://sunzhongmeng.github.io/`，需要在名为 `sunzhongmeng.github.io` 的仓库中配置个人站点；现有 Notes 项目无需为此更名或迁移。
+
 ### 失败时处理
 
 - 构建或链接检查失败：根据文章路径修复内容，重新双击脚本。
 - 登录、权限或网络失败：检查 GitHub 登录和仓库地址，恢复后重试；本地已完成的提交会保留。
 - 提示远端有本地没有的提交：先手动拉取并处理差异，再重试。脚本不会强制推送、自动拉取或自动合并。
 - 当前分支不是 `main`，或存在未完成的合并、变基或冲突：先手动处理分支或冲突，确保与 Pages 工作流配置一致。
+- 网页返回 404：检查访问地址是否包含 `/Notes/`，并确认 Pages 发布源为 GitHub Actions、最新部署成功；以 Settings → Pages 中显示的站点地址为准。
+- 推送成功但网页内容未更新：先检查最新提交对应的 Actions 是否完成，查看失败任务日志；成功后等待发布生效，再强制刷新浏览器（Ctrl+F5）。
 
 脚本实现位于根目录的 `deploy/github-pages/push.py`。需要在终端运行时可使用：
 
